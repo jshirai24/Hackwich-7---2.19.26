@@ -9,11 +9,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var topLabel: UILabel!
+    
+    @IBOutlet weak var bottomLabel: UILabel!
+    var currentIndex = 0
+    var favoriteFoodsArray: [String] = ["Chocolate", "Ramen", "Pasta", "Sushi", "Cookies"]
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        topLabel.text = "My Favorite Foods"
+        
     }
-
-
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+     //Code Block
+        bottomLabel.text = favoriteFoodsArray[currentIndex]
+        
+        
+    }
+    
 }
 
