@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var bottomLabel: UILabel!
     var currentIndex = 0
+   
+    
     var favoriteFoodsArray: [String] = ["Chocolate", "Ramen", "Pasta", "Sushi", "Cookies"]
     
     
@@ -26,7 +28,13 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: Any) {
      //Code Block
-        bottomLabel.text = favoriteFoodsArray[currentIndex]
+        let foodNames = favoriteFoodsArray[0..<favoriteFoodsArray.endIndex]
+        bottomLabel.text = "\(foodNames)"
+ 
+        
+        
+        
+        
         
         
     }
