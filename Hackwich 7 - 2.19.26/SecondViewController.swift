@@ -9,10 +9,27 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    
+    @IBOutlet weak var topLabel: UILabel!
+    
+    @IBOutlet weak var bottomLabel: UILabel!
+    
+    @IBOutlet weak var showsButton: UIButton!
+    
+    var favoriteShowsArray = ["Mighty Nein, Gravity Falls, Chiikawa, Andor, Arcane"]
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        topLabel.text = "My Favorite Shows"
+        
+        
+        
+        
+        
     }
     
 

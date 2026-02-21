@@ -8,21 +8,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Second View Controller-->
         <scene sceneID="wAl-28-bxn">
             <objects>
-                <viewController id="aBB-b8-RA7" sceneMemberID="viewController">
+                <viewController id="aBB-b8-RA7" customClass="SecondViewController" customModule="Hackwich_7___2_19_26" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLS-zW-bis">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MV0-bi-Xtb">
+                                <rect key="frame" x="159" y="633" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDJ-ke-obg">
+                                <rect key="frame" x="175" y="369" width="43" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eu8-UQ-Xrd">
+                                <rect key="frame" x="175" y="497" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Bkc-ne-NoY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zDJ-ke-obg" firstAttribute="centerX" secondItem="MV0-bi-Xtb" secondAttribute="centerX" id="48e-Wc-wDX"/>
+                            <constraint firstAttribute="bottom" secondItem="eu8-UQ-Xrd" secondAttribute="bottom" constant="334" id="8Va-y6-1eh"/>
+                            <constraint firstItem="eu8-UQ-Xrd" firstAttribute="centerX" secondItem="zDJ-ke-obg" secondAttribute="centerX" id="KOA-iB-tDG"/>
+                            <constraint firstItem="zDJ-ke-obg" firstAttribute="top" secondItem="Bkc-ne-NoY" secondAttribute="top" constant="197" id="X1P-gI-zAx"/>
+                            <constraint firstItem="MV0-bi-Xtb" firstAttribute="centerX" secondItem="gLS-zW-bis" secondAttribute="centerX" id="aM2-YU-df5"/>
+                            <constraint firstItem="eu8-UQ-Xrd" firstAttribute="leading" secondItem="zDJ-ke-obg" secondAttribute="leading" id="eh4-fa-lbq"/>
+                            <constraint firstItem="MV0-bi-Xtb" firstAttribute="top" secondItem="Bkc-ne-NoY" secondAttribute="top" constant="461" id="jHl-gi-fBb"/>
+                            <constraint firstItem="zDJ-ke-obg" firstAttribute="leading" secondItem="Bkc-ne-NoY" secondAttribute="leading" constant="175" id="jpd-hD-5e5"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="RDh-Hv-QP0"/>
+                    <navigationItem key="navigationItem" id="4ZJ-T6-3iK"/>
+                    <connections>
+                        <outlet property="bottomLabel" destination="eu8-UQ-Xrd" id="cvd-5Q-bKD"/>
+                        <outlet property="showsButton" destination="MV0-bi-Xtb" id="Ma6-mp-7K8"/>
+                        <outlet property="topLabel" destination="zDJ-ke-obg" id="ylT-J0-7SD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VrY-8j-jlN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="201"/>
+            <point key="canvasLocation" x="1070.9923664122136" y="200.70422535211267"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yFV-MS-Svs">
@@ -90,7 +124,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="EEu-x5-Dn2" kind="relationship" relationship="viewControllers" id="NYX-N6-AhN"/>
-                        <segue destination="aBB-b8-RA7" kind="relationship" relationship="viewControllers" id="ci3-3z-6g3"/>
+                        <segue destination="FlL-ca-Yye" kind="relationship" relationship="viewControllers" id="ci3-3z-6g3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sr9-NB-xIS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -116,14 +150,34 @@
             </objects>
             <point key="canvasLocation" x="83.206106870229007" y="-552.11267605633805"/>
         </scene>
+        <!--Favorite Shows-->
+        <scene sceneID="7Mv-sT-2LW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FlL-ca-Yye" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorite Shows" image="tv" catalog="system" id="RDh-Hv-QP0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Nu-fB-oug">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aBB-b8-RA7" kind="relationship" relationship="rootViewController" id="wyp-Dv-MHY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Crg-3e-DOD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="201"/>
+        </scene>
     </scenes>
     <resources>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
+        <image name="tv" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.76470588235294112" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

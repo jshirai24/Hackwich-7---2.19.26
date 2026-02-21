@@ -28,9 +28,11 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: Any) {
      //Code Block
-        let foodNames = favoriteFoodsArray[0..<favoriteFoodsArray.endIndex]
-        bottomLabel.text = "\(foodNames)"
- 
+     //(This prints the whole array not one at a time): let foodNames = favoriteFoodsArray[0..<favoriteFoodsArray.endIndex] || bottomLabel.text = "\(foodNames)"
+       
+        if currentIndex < favoriteFoodsArray.count {
+            bottomLabel.text = favoriteFoodsArray[currentIndex]
+            currentIndex = currentIndex + 1}
         
         
         
