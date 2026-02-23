@@ -23,19 +23,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         topLabel.text = "My Favorite Foods"
-        
+        bottomLabel.isHidden = true
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
      //Code Block
      //(This prints the whole array not one at a time): let foodNames = favoriteFoodsArray[0..<favoriteFoodsArray.endIndex] || bottomLabel.text = "\(foodNames)"
+        bottomLabel.isHidden = false
        
         if currentIndex < favoriteFoodsArray.count {
             bottomLabel.text = favoriteFoodsArray[currentIndex]
             currentIndex = currentIndex + 1}
-        
-        
-        
         
         
         

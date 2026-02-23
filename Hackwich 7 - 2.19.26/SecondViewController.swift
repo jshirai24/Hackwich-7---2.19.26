@@ -15,32 +15,38 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var bottomLabel: UILabel!
     
     @IBOutlet weak var showsButton: UIButton!
-    
-    var favoriteShowsArray = ["Mighty Nein, Gravity Falls, Chiikawa, Andor, Arcane"]
-    
+ 
+    var currentIndex = 0
+   
+    var favoriteShowsArray: [String] = ["Mighty Nein", "Gravity Falls", "Chiikawa", "Percy Jackson", "Arcane"]
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+     
         topLabel.text = "My Favorite Shows"
-        
-        
+        showsButton.setTitle("See My Favorite Shows", for: .normal)
+        bottomLabel.isHidden = true
         
         
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func showsButtonPressed(_ sender: Any) {
+        bottomLabel.isHidden = false
+        if currentIndex < favoriteShowsArray.count {
+            bottomLabel.text = favoriteShowsArray[currentIndex]
+            currentIndex = currentIndex + 1
+        }
     }
-    */
+    
+    
+    
+    
+    
+    
 
-}
+   }
